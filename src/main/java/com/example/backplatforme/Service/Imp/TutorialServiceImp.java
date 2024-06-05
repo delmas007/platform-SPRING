@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
@@ -27,7 +28,11 @@ public class TutorialServiceImp implements TutorialService {
 
     @Override
     public List<TutorialDto> getTutoriat() {
-
-        return Collections.singletonList(TutorialDto.fromEntity((Tutorial) tutorialRepository.findAll()));
+        List<Tutorial> tutorials = tutorialRepository.findAll();
+        List<TutorialDto> tutorialDtos = tutorials.stream()
+                .map(TutorialDto::fromEntity)
+                .collect(Collectors.toList());
+        return tutorialDtos;
     }
+
 }
