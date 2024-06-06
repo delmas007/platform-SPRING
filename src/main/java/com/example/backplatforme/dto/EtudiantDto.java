@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 public class EtudiantDto {
     private String id;
     private String username;
+    private String password;
     private String prenom;
     private String nom;
     private String telephone;
@@ -26,6 +27,7 @@ public class EtudiantDto {
         return EtudiantDto.builder()
                 .id(etudiant.getId())
                 .username(etudiant.getUsername())
+                .password(etudiant.getPassword())
                 .prenom(etudiant.getPrenom())
                 .nom(etudiant.getNom())
                 .telephone(etudiant.getTelephone())
@@ -43,6 +45,7 @@ public class EtudiantDto {
         return Etudiant.builder()
                 .id(etudiantDto.getId())
                 .username(etudiantDto.getUsername())
+                .password(etudiantDto.getPassword())
                 .prenom(etudiantDto.getPrenom())
                 .nom(etudiantDto.getNom())
                 .telephone(etudiantDto.getTelephone())

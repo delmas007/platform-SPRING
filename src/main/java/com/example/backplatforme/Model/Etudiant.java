@@ -19,6 +19,7 @@ public class Etudiant {
     private String id;
 
     private String username;
+    private String password;
     private String prenom;
     private String nom;
     private String telephone;

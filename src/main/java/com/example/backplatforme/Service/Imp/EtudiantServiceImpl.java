@@ -9,6 +9,7 @@ import com.example.backplatforme.dto.EtudiantDto;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
 import java.util.UUID;
 
 @AllArgsConstructor
@@ -39,6 +40,9 @@ public class EtudiantServiceImpl implements EtudiantService {
 
     @Override
     public EtudiantDto loadUserByUsername(String username) {
-        return null;
+        Optional<Etudiant> user = etudiantRepository.findByUsername(username);
+        return EtudiantDto.fromEntity(user.orElseThrow(()-> new EntityNotFoundException("Utilisateur pas trouver ",
+                ErrorCodes.UTILISATEUR_PAS_TROUVER)));
+
     }
 }
