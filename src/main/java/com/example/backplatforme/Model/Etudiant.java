@@ -26,6 +26,7 @@ public class Etudiant {
     private String email;
     private String universite;
     private String societe;
+    private String photo;
 
 
     @OneToMany(mappedBy = "etudiant")

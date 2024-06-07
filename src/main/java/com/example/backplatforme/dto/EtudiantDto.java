@@ -18,6 +18,7 @@ public class EtudiantDto {
     private String email;
     private String universite;
     private String societe;
+    private String photo;
 
     public static EtudiantDto fromEntity(Etudiant etudiant) {
         if (etudiant == null) {
@@ -34,6 +35,7 @@ public class EtudiantDto {
                 .email(etudiant.getEmail())
                 .universite(etudiant.getUniversite())
                 .societe(etudiant.getSociete())
+                .photo(etudiant.getPhoto())
                 .build();
     }
 
@@ -52,6 +54,7 @@ public class EtudiantDto {
                 .email(etudiantDto.getEmail())
                 .universite(etudiantDto.getUniversite())
                 .societe(etudiantDto.getSociete())
+                .photo(etudiantDto.getPhoto())
                 .build();
     }
 }

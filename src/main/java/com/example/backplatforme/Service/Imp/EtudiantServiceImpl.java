@@ -58,6 +58,7 @@ public class EtudiantServiceImpl implements EtudiantService {
                     .email(etudiantDto.getEmail())
                     .universite(etudiantDto.getUniversite())
                     .societe(etudiantDto.getSociete())
+                    .photo(etudiantDto.getPhoto())
                     .build();
             Etudiant savedUser = etudiantRepository.save(newUser);
             return EtudiantDto.fromEntity(savedUser);
