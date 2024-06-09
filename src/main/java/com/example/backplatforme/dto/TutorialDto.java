@@ -5,6 +5,7 @@ import com.example.backplatforme.Model.Tutorial;
 import lombok.Builder;
 import lombok.Data;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Data
@@ -17,6 +18,7 @@ public class TutorialDto {
     private Date dateDebut;
     private Etudiant etudiant;
     private String etudiants;
+    private LocalDateTime datePublication;
 
     public static TutorialDto fromEntity(Tutorial tutorial) {
         if (tutorial == null) {
@@ -28,6 +30,7 @@ public class TutorialDto {
                 .description(tutorial.getDescription())
                 .coutMensuel(tutorial.getCoutMensuel())
                 .dateDebut(tutorial.getDateDebut())
+                .datePublication(tutorial.getDatePublication())
                 .etudiant(tutorial.getEtudiant())
                 .build();
     }
