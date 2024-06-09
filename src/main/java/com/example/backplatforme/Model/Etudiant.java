@@ -1,4 +1,5 @@
 package com.example.backplatforme.Model;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,9 +13,8 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@JsonIgnoreProperties({"password", "tutorials", "photo", "id"})
 public class Etudiant {
-
-
     @Id
     private String id;
 
@@ -31,7 +31,4 @@ public class Etudiant {
 
     @OneToMany(mappedBy = "etudiant")
     private Set<Tutorial> tutorials;
-
-
-
 }

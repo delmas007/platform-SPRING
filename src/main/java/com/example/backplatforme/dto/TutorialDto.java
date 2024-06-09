@@ -16,6 +16,7 @@ public class TutorialDto {
     private Double coutMensuel;
     private Date dateDebut;
     private Etudiant etudiant;
+    private String etudiants;
 
     public static TutorialDto fromEntity(Tutorial tutorial) {
         if (tutorial == null) {
